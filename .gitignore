@@ -81,6 +81,7 @@ Temporary Items
 
 ### Eclipse ###
 /.metadata
+.metadata
 /Servers
 .settings
 .project
