@@ -79,14 +79,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### Eclipse ###
-/.metadata
-.metadata
-/Servers
-.settings
-.project
-.classpath
-.buildpath
+### STM32CubeIDE ###
+*.metadata
+Servers
+*.settings
+*.classpath
+*.buildpath
 RemoteSystemsTempFiles
 bin
 org.eclipse.jdt.core.prefs
