@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-10-17T23:41:40Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.1"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "DiceFace"
+        },
+        "Owner": "Owen Convery <convery.owen@gmail.com>",
+        "Size": {
+            "X": 25.908,
+            "Y": 25.908
+        }
+    }
+}
