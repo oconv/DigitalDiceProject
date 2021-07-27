@@ -38,7 +38,9 @@ Before we write involved programs with multiple libraries, we should test the ba
   
 ### 4. ClickRNG
 
-For this test program, we will now be exploring more functionality that will be used in our final project code... RNG, Shift register
+For this test program, we will now be exploring more functionality that will be used in our final project code. For this setup, we want to create a program that (1) generates a random number, (2) displays that value using a shift register and LEDs, (3) and then enters "Stop mode" until it is woken up again by the press of a button. You can read about the five different [low-power modes](https://forum.digikey.com/t/low-power-modes-on-the-stm32l0-series/13306) available for the STM32L0 series. The pins have already been configured for you as shown below. You should now construct the circuit as shown in the circuit diagram.
+
+[IMAGES GOES HERE]
 
 To recieve data from the NUCLEO, we must connect to it through UART (universal asynchronus reciever/transmitter). By default, STM32CubeIDE initialized the MCU pins in such a way that no extra connections are necessary and we can communicate through USB. The default baud rate is 115200 bits/s. Confirm that this is true for your setup. If using Windows, you should install [PuTTY](https://www.putty.org/) and connect through the graphical interface. If on Mac or Linux, you can use the Screen command to connect to the board. To view available devices, type the following into your command line:
 
@@ -61,7 +63,7 @@ Identify the correct port, and connect to it using a command similar to:
 screen /dev/cu.usbmodem143103 115200
 ```
 
-You should now be connected to your NUCLEO!
+You should now be connected to your NUCLEO! After verifying that the program works as expected, you will have enough knowledge to write the project code that will be flashed on the stand alone MCU.
 
 <details>
   <summary>Hint: Communicate with UART</summary> 
