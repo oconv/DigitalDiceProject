@@ -5,7 +5,8 @@
 1. Familiarize ourselves with the **NUCLEO-L031K6**
 2. Understand how to develope code with the **STM32CubeIDE**
 3. Write a simple **BlinkTest** program for the NUCLEO
-4. Write the **project code** for the STM32L031K6
+4. Test multiple useful libraries by writing the **ClickRNG** program
+5. Write the **ProjectCode** for the STM32L031K6
 
 ### 1. NUCLEO-L031K6
 
@@ -19,6 +20,22 @@ Here are some resources to learn more about the STM32L031K6:
 
 ### 2. STM32CubeIDE
 
+STM32CubeIDE is an all in one integrated developing environment used to easily setup, develop, and debug code for STM32 MCUs and developement boards...
+
 ### 3. BlinkTest
 
-### 4. Project Code
+Before we write involved programs with multiple libraries, we should test the basic funcionality of our board and ensure that the STM32CubeIDE debugger works. To do that, we will write a simple program that flashes an LED (LD3) on the NUCLEO. Your task is to use this [Description of STM32L0 HAL and Low Layer drivers](https://www.st.com/resource/en/user_manual/dm00113898-description-of-stm32l0-hal-and-low-layer-drivers-stmicroelectronics.pdf) to find useful functions that achieve this goal. LD3 has already been correctly configured and all you need to do is add some lines of code to the while loop in main.c. 
+
+<details>
+  <summary>Hint: Toggle the LED</summary> 
+  
+  To change the LD3 pin from low to high (and vice versa), you should implement this function:
+  
+  ```cpp
+  void HAL_GPIO_TogglePin (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)
+  ```
+</details>
+  
+### 4. ClickRNG
+
+### 5. ProjectCode
