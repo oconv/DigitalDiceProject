@@ -57,6 +57,8 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t myMessage[9] = "Toggle!\r\n";
+
 /* USER CODE END 0 */
 
 /**
@@ -102,8 +104,9 @@ int main(void)
 
 	/* YOUR CODE STARTS HERE */
 
+	HAL_UART_Transmit(&huart2, myMessage, 9, 10);
 	HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
-	HAL_Delay(100);
+	HAL_Delay(1000);
 
 	/* YOUR CODE ENDS HERE */
   }
