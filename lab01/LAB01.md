@@ -31,11 +31,46 @@ Before we write involved programs with multiple libraries, we should test the ba
   
   To change the LD3 pin from low to high (and vice versa), you should implement this function:
   
-  ```cpp
-  void HAL_GPIO_TogglePin (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)
+  ```c
+  void HAL_GPIO_TogglePin(GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)
   ```
 </details>
   
 ### 4. ClickRNG
+
+For this test program, we will now be exploring more functionality that will be used in our final project code... RNG, Shift register
+
+To recieve data from the NUCLEO, we must connect to it through UART (universal asynchronus reciever/transmitter). By default, STM32CubeIDE initialized the MCU pins in such a way that no extra connections are necessary and we can communicate through USB. The default baud rate is 115200 bits/s. Confirm that this is true for your setup. If using Windows, you should install [PuTTY](https://www.putty.org/) and connect through the graphical interface. If on Mac or Linux, you can use the Screen command to connect to the board. To view available devices, type the following into your command line:
+
+```c
+ls /dev/cu.*
+```
+
+Your output should look something like this:
+
+```
+/dev/cu.Bluetooth-Incoming-Port	/dev/cu.WH-H910Nhear-SerialHPC
+/dev/cu.WH-H910Nhear-Airoha_APP	/dev/cu.WH-H910Nhear-SerialMC
+/dev/cu.WH-H910Nhear-GSOUND_BT_	/dev/cu.usbmodem143103
+/dev/cu.WH-H910Nhear-IAPSERVER
+```
+
+Identify the correct port, and connect to it using a command similar to:
+
+```
+screen /dev/cu.usbmodem143103 115200
+```
+
+You should now be connected to your NUCLEO!
+
+<details>
+  <summary>Hint: Communicate with UART</summary> 
+  
+  To transmit data over UART, read about and implement the following function:
+  
+  ```c
+  HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef * huart, uint8_t * pData, uint16_t Size, uint32_t Timeout)
+  ```
+</details>
 
 ### 5. ProjectCode
