@@ -86,6 +86,7 @@ Servers
 *.classpath
 *.buildpath
 *.launch
+*/Debug/
 RemoteSystemsTempFiles
 bin
 org.eclipse.jdt.core.prefs
