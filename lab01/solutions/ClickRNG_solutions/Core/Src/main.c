@@ -19,6 +19,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -58,6 +60,8 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN 0 */
 
 uint8_t myMessage[9] = "Toggle!\r\n";
+char myRandS[1];
+unsigned int myRand;
 
 /* USER CODE END 0 */
 
@@ -104,7 +108,10 @@ int main(void)
 
 	/* YOUR CODE STARTS HERE */
 
-	HAL_UART_Transmit(&huart2, myMessage, 9, 10);
+	myRand = rand() % 6;
+	itoa(myRand, myRandS, 10);
+
+	HAL_UART_Transmit(&huart2, myRandS, 1, 10);
 	HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 	HAL_Delay(1000);
 
